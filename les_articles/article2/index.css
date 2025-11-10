@@ -1,0 +1,35 @@
+/*taille de la police*/
+main,li{
+	font-size:14pt;
+}
+/*taille de l'image positionner à droite et le redevient une taille normal après agradissement sur 3 secondes*/
+img{
+	position:relative;
+    float:right;
+    width:48%;
+    margin-right:50px;
+    transition:3s;
+}
+/*agrandissement de l'image sur 5 secondes*/
+img:hover{
+	position:relative;
+	width:80%;
+	transition:5s;
+}
+/*vidéo positionner à droite en définissant la taille*/
+iframe{
+	position:relative;
+    float:right;
+    margin:20px;
+    width:52%;
+    height:300px;
+}
+/*emplacement de la liste numérotée et s'adapte à l'agrandissement de l'image*/
+ol{
+    position:relative;
+    width:39%;
+}
+/*les alinéas à chaque p dans le html*/
+p{
+	text-indent:3%;
+}

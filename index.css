@@ -1,0 +1,156 @@
+/*donner formatage de police*/
+@font-face {
+   font-family: "Ma police";
+   src: url("police/FiraSans-Book.woff");
+}
+
+/* définir l'animation ballon(.droite)*/
+@-webkit-keyframes slide {
+ from {
+  margin-left:0
+ }
+ to {
+  margin-left:80%
+ }
+}
+@keyframes slide {
+ from {
+  margin-left:0
+ }
+ to {
+  margin-left:80%
+ }
+}
+@-webkit-keyframes bounce {
+ from {
+  margin-bottom:0
+ }
+ to {
+  margin-bottom:20%
+ }
+}
+@keyframes bounce {
+ from {
+  margin-top:0
+ }
+ to {
+  margin-top:20%
+ }
+}
+
+/* couleur de fond et centralisation des élements */
+html {
+   background-image:linear-gradient(45deg, blue, yellow, grey, green, red);
+   background-repeat:no-repeat;
+   text-align:center;
+}
+
+/* dimension et position de l'image à gauche du drapeau olympique */
+.gauche{
+	position:relative;
+	float:left;
+	margin-left:2%;
+	width:10%;
+}
+/* dimension et position de l'image à droite du drapeau olympique */
+.droite{
+	position:relative;
+	float:right;
+	margin-right:2%;
+	width:10%;
+/*animation:rebondit à l'infini d'ue période de 1 seconde 50*/
+	animation-direction:alternate;
+	animation-duration:1.5s;
+	animation-iteration-count:infinite;
+	animation-timing-function:ease-in;
+	animation-name: bounce;
+}
+
+/* taille de l'image drapeau olympique */
+a img{
+	width:60%;
+}
+
+/* formatage de l'en-tête */
+header{
+	text-decoration: underline;
+	font-family:Times,sans-serif;
+	font-size:40pt;
+	color:fuchsia;
+}
+
+/* formatage du texte de h1 */
+h1{
+	font-family:Times,sans-serif;
+	font-size:26pt;
+	color:aqua;
+}
+
+/* mise en page des liens avec les blocks */
+
+ul{
+/* grille et dimension */
+    display: grid;
+    grid-gap:10% 20%;
+    grid-template-rows:auto auto;
+    grid-template-columns:30% 30%;
+/* alignement de texte */
+    justify-content:center;
+/* pas de puce */
+	list-style-type:none;
+    padding: 20px;
+	font-size: 40px;
+}
+
+ul a{
+/* lien cliquable dans le bloc */
+    display: block;
+	width: 120%;
+/* centrer les blocks dans les colonnes */
+    margin-left: auto;
+    margin-right: auto;
+/* style de block */
+    border: 1px solid black;
+    padding: 20px;
+	box-sizing: border-box; 
+	border-radius: 1em;
+/* couleur et style de police */
+	color:black;
+	font-family:"Ma police",Arial,sans-serif;
+}
+/* par défaut */
+nav ul a:link{
+	background-color:white;
+}
+/* déjà visité */
+nav ul a:visited{
+	background-color:red;
+}
+/* lors du survol */
+nav ul a:hover{
+	background-color:green;
+	text-decoration:underline;
+}
+/* focus clavier */
+nav ul a:focus{
+	background-color:green;
+	text-decoration:underline;
+}
+/* lors du clic */
+nav ul a:active{
+	color:yellow;
+}
+/* image de la FIBA */
+footer a img{
+	width:400px;
+}
+
+footer address{
+/* définir Le block */
+	display:block;
+	border: 0.5px solid black;
+	background-color:#48C4FA;
+/* formatage du texte en footer */	
+	color:black;
+	font-size:10pt;
+}

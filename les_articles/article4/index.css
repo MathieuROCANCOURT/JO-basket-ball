@@ -1,0 +1,17 @@
+/*grille de 2 colonnes et définit la taille de police */
+section{
+	display:grid;
+	grid-template-columns:auto auto;
+	font-size:16pt;
+}
+/*texte aligner au centre avec des bordures noirs d'arrière-plan de couleur vert forêt*/
+p{
+	border:solid black 1px;
+	background-color:forestgreen;
+	text-align:center;
+}
+/*taille des images centrer au milieu des cases verticalement*/
+img{
+	margin:auto;
+	width:60%;
+}

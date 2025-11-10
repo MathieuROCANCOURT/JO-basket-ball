@@ -1,0 +1,119 @@
+/*en-tête*/
+header{
+	text-align:center;
+}
+/*début de la liste déroulante*/
+/*mettre le menu déroulante au milieu*/
+.menu {
+	text-align: center;
+}
+/*la couleur des cases sont bleus et déroule vers le bas*/
+.menu .categorie {
+	display: inline-block;
+	vertical-align: top;
+	background: lightblue;
+}
+
+/*puce enlever et une position qui ne bouge pas*/
+.menu .categorie ul {
+	display: none;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+/*la liste déroule lors du survol*/
+.menu .categorie:hover ul {
+	display: block;
+}
+
+/*police au milieu des blocks et de couleur noir et défini les tailles des cases*/
+.menu h2,
+.menu a {
+	display: block;
+	margin: 0;
+	padding: .5em 1.5em;
+	font-size: inherit;
+	color: black;
+	background-color: lightblue;
+	text-decoration: none;
+	box-sizing: border-box;
+	width: 10em;
+}
+
+/*survol du block fixe:police en blanc et couleur du block en violet*/
+.menu .categorie:hover h2 {
+	color: white;
+	background-color: #883EF3;
+}
+/*survol des blocks après avoir dérouler le menu:police en noir et couleur du block en jaune*/
+.menu a:hover {
+	color: black;
+	background-color: yellow;
+}
+/*click sur le block pour accéder au 3x3 ou 5x5:police en noir et couleur du block en jaune*/
+.menu a:focus {
+	color: black;
+	background-color: yellow;
+}
+/*fin liste déroulante*/
+
+/*formatage du texte dans les sections*/
+legend{
+	color:#1DFE1F;
+	font-size:23pt;
+	font-family:Arial, sans-serif;
+}
+/*image au centre de la fenêtre*/
+img{
+	display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:30%;
+    height:50%;
+    padding:20px;
+    transition:4s;
+}
+
+/*image en horizontale plus grand que l'horizontal*/
+br+img{
+	text-align:center;
+	width:700px;
+	height:400px;
+}
+/*agrandissement des images horizontales sur une durée de 5 secondes*/
+br+img:hover{
+	position:relative;
+	float:center;
+	width:95%;
+	height:600px;
+	transition:5s;
+}
+/*agrandissement des images verticales sur une durée de 3 secondes*/
+img:hover{
+	position:relative;
+	float:center;
+	width:60%;
+	transition:3s;
+}
+/*taille de la police*/
+section{
+	font-size:20pt;
+}
+/*section 5x5*/
+.a{
+	background-color:#677CC2;
+}
+/*section 3x3*/
+.b{
+	background-color:#65AD5A;
+}
+/*lien*/
+a{
+	font-style:italic;
+}
+/*alinéa au début des paragraphes*/
+p{
+	text-indent:1.75%;
+}
