@@ -1,0 +1,41 @@
+/*les polices*/
+@font-face {
+   font-family: "Ma police";
+   src: url("../police/AlexBrush-Regular.ttf");
+}
+
+@font-face {
+   font-family: "Ma police2";
+   src: url("../police/OpenSans-Regular.ttf");
+}
+/*couleur des arrière-plans des articles*/
+html{
+	background-color:grey;
+}
+/*les élèments dans header ne sont pas indépendants*/
+header{
+	overflow: hidden
+}
+/*police:taille, centrer, formatage, couleur et soulignement*/
+header h1{
+	font-size:40pt;
+	text-align:center;
+	font-family:"Ma police", Times, sans-serif;
+	color:red;
+	text-decoration:underline;
+}
+/*police:formatage, taille. block positionner au début avec des bordures noir avec une couleur orange et élargi le block*/
+header a{
+	display:block;
+	border:solid black 1px;
+	position:absolute;
+	padding:1%;
+	font-family:"Ma police2", Times, sans-serif;
+	font-size:20pt;
+	background-color:#F3A01D;
+}
+/*survol du block:l'orange devient bleu et la couleur de la police devient jaune foncé*/
+header a:hover{
+	background-color:blue;
+	color:#B9C049;
+}
