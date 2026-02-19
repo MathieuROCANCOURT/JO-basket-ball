@@ -14,7 +14,7 @@ Sur la page d'accueil, on a le ballon qui fait un mouvement vertical avec une an
 <img width="980" height="1034" alt="Page d&#39;accueil - Une discipline Olympique le Basket-ball" src="https://github.com/user-attachments/assets/77fac035-7e6e-4666-aa64-5122af0271cf" />
 
 ## Tâches
-- [ ] Remettre les informations à jour (2025).
+- [ ] Remettre les informations à jour (2026).
 - [ ] Saisir les nouvelles règles et changer le contenu.
 - [ ] Actualiser les ressources vidéos si encore disponible.
-- [ ] Uniformiser l'identité du site.
+- [x] Uniformiser l'identité du site.
