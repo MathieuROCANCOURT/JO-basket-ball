@@ -7,6 +7,7 @@ header {
 /* Mettre le menu déroulante au milieu */
 .menu {
 	text-align: center;
+	margin-bottom: 1.5em;
 }
 
 /* La couleur des cases sont bleus et déroule vers le bas */
@@ -61,15 +62,7 @@ header {
 	color: black;
 	background-color: yellow;
 }
-
 /** Fin liste déroulante **/
-
-/** Formatage du texte dans les sections **/
-legend {
-	color: #1DFE1F;
-	font-size: 23pt;
-	font-family: Arial, sans-serif;
-}
 
 /** image au centre de la fenêtre **/
 img {

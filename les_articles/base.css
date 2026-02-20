@@ -11,10 +11,19 @@
 
 /** Couleur de fond et centralisation des éléments **/
 html {
+	font-family: "Ma police2", Times, sans-serif;
 	background-image: linear-gradient(45deg, blue, yellow, grey, green, red);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	padding: 16pt
+}
+
+/** Titre des grandes cases au milieu et taille de la police **/
+legend {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 26pt;
 }
 
 /** Les éléments dans header ne sont pas indépendants **/
@@ -27,7 +36,7 @@ header h1 {
 	font-size: 40pt;
 	text-align: center;
 	font-family: "Ma police", Times, sans-serif;
-	color: red;
+	color: yellow;
 	text-decoration: underline;
 }
 
