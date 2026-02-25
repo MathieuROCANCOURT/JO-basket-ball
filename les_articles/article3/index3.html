@@ -35,6 +35,7 @@
 			/* Historic → modern country map */
 			const COUNTRY_ALIAS = {
 				"Soviet Union": "Russia",
+				"Unified": "Russia",
 				"USSR": "Russia",
 				"Yugoslavia": "Serbia",
 				"Serbia and Montenegro": "Serbia"
@@ -47,10 +48,7 @@
 
 			/* CSV → array of rows (trimmed cells) */
 			function parseCsv(csv) {
-				return csv
-					.split(/\r?\n/)               // line‑breaks
-					.filter(l => l.trim())       // drop empty lines
-					.map(l => l.split(',').map(c => c.trim()));
+				return csv.split(/\r?\n/).filter(l => l.trim()).map(l => l.split(',').map(c => c.trim()));
 			}
 
 			/* Build a dictionary {Country → {Gold,Silver,Bronze,Total}} */
@@ -67,7 +65,7 @@
 						if (!dict[country]) {
 							dict[country] = { Country: country, Gold: 0, Silver: 0, Bronze: 0, Total: 0 };
 						}
-						dict[country][type]++;   // ++Gold / ++Silver / ++Bronze
+						dict[country][type]++;
 						dict[country].Total++;
 					};
 
@@ -92,6 +90,17 @@
 					}
 				}
 				return result;
+			}
+
+			/* Comparator used for every table (descending order) */
+			function medalComparator(a, b) {
+				// Gold, then Silver, then Bronze, then Total
+				// If everything is equal we sort alphabetically to keep the order deterministic
+				return b.Gold - a.Gold ||
+					b.Silver - a.Silver ||
+					b.Bronze - a.Bronze ||
+					b.Total - a.Total ||
+					a.Country.localeCompare(b.Country);
 			}
 
 			/* Equality test – used for tie detection */
@@ -260,9 +269,7 @@
 				container.appendChild(table);
 			}
 
-			/* --------------------------------------------------------------
-			   9️⃣  Main driver – load CSVs, build dictionaries, render tables
-			   -------------------------------------------------------------- */
+			/* Main driver – load CSVs, build dictionaries, render tables */
 			async function init() {
 				// Load both CSV files in parallel
 				const [menCsv, womenCsv] = await Promise.all([
@@ -280,18 +287,14 @@
 				const womenDict = buildMedalDict(womenRows);
 
 				// ---------- Render MEN tables ----------
-				const menArray = Object.values(menDict).sort(
-					(a, b) => b.Gold - a.Gold || b.Silver - a.Silver || b.Bronze - b.Bronze
-				);
+				const menArray = Object.values(menDict).sort(medalComparator);
 				const menFieldset = document.querySelector('.masculin');
 				renderEditionTable(menRows, menFieldset, 'Hommes');
 				menFieldset.appendChild(document.createElement("p"));
 				renderRankingTable(menArray, menFieldset, 'Hommes');
 
 				// ---------- Render WOMEN tables ----------
-				const womenArray = Object.values(womenDict).sort(
-					(a, b) => b.Gold - a.Gold || b.Silver - a.Silver || b.Bronze - b.Bronze
-				);
+				const womenArray = Object.values(womenDict).sort(medalComparator);
 				const womenFieldset = document.querySelector('.feminin');
 				renderEditionTable(womenRows, womenFieldset, 'Femmes');
 				womenFieldset.appendChild(document.createElement("p"));
@@ -299,12 +302,7 @@
 
 				// ---------- Build TOTAL‑MEDALS table ----------
 				const totalDict = mergeDicts(menDict, womenDict);
-				const totalArray = Object.values(totalDict).sort(
-					(a, b) => b.Gold - a.Gold ||
-						b.Silver - a.Silver ||
-						b.Bronze - a.Bronze ||
-						b.Total - a.Total
-				);
+				const totalArray = Object.values(totalDict).sort(medalComparator);
 
 				// The container we want is the <fieldset> inside #totalMedalsContainer
 				const totalFieldset = document.querySelector('#totalMedalsContainer fieldset');
