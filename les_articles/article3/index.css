@@ -6,7 +6,7 @@ main {
 
 /** Si la longueur de la fenêtre est <= 75em alors, Grille: 2 colonnes égaux et 1 ligne **/
 @media (min-width: 75em) {
-    main div {
+    #tableContainer {
         display: grid;
         column-gap: .5em;
         grid-template-columns: 50% 50%;
@@ -52,12 +52,12 @@ th {
 }
 
 /** Ligne pair pour les tableaux masculins:couleur bleu foncé **/
-.masculin tr:nth-child(even) {
+.masculin tbody tr:nth-child(odd) {
     background-color: #2D64C0;
 }
 
 /** Ligne pair pour les tableaux féminins:couleur rose foncé **/
-.feminin tr:nth-child(even) {
+.feminin tbody tr:nth-child(odd) {
     background-color: #A118A1;
 }
 
@@ -69,6 +69,6 @@ fieldset {
 }
 
 /** Ligne pair du dernier tableau: vert foncé **/
-fieldset tr:nth-child(even) {
+fieldset tbody tr:nth-child(odd) {
     background-color: #117E11;
 }
