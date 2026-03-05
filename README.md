@@ -15,6 +15,6 @@ Sur la page d'accueil, on a le ballon qui fait un mouvement vertical avec une an
 
 ## Tâches
 - [x] Remettre les informations à jour (2026).
-- [ ] Saisir les nouvelles règles et changer le contenu.
+- [x] Saisir les nouvelles règles et changer le contenu.
 - [ ] Actualiser les ressources vidéos si encore disponible.
 - [x] Uniformiser l'identité du site.
