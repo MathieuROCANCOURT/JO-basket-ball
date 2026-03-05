@@ -1,7 +1,7 @@
 # JO Basket-ball
 Faire un site sur les Jeux Olympiques sur le basket-ball en utilisant du HTML, du CSS et les ressources en ligne.\
 > [!WARNING]
-> Les ressources datant début de la date 2019, Les informations sur les règles sont obsolètes et les données sur les médailles ne sont pas à jour. De même, certaines ressources ne sont plus disponible sur Internet et les vidéos YouTube ne peuvent pas être lu directement sur le site directement.
+> Certaines vidéos YouTube ne peuvent pas être lu car elles sont retirées d'Internet.
 
 ## Vérification des fichiers HTML et CSS
 Pour vérifier la structure et les balises HTML et valider le contenu CSS, utiliser le [service de validation du balisage](https://validator.w3.org/). En cas de $${\color{orange}Warning}$$ ou $${\color{red}Error}$$, le site affiche un message d'information en renvoyant potentiellement vers un ou des liens vers la documentation.
