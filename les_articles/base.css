@@ -58,3 +58,10 @@ header a:hover {
 	background-color: rgb(255, 217, 0);
 	color: #000000;
 }
+
+/** Style title pictures **/
+figure figcaption {
+	text-align: center;
+	font-size: 14pt;
+	font-style: italic;
+}
