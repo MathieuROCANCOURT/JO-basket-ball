@@ -1,5 +1,6 @@
 export interface TranslationData {
     countries: Record<string, string>;
+    cities: Record<string, string>;
     aliases: Record<string, string>;
 }
 
@@ -29,6 +30,15 @@ export function getCountryTranslation(
 ): string {
     const normalized = normalizeCountry(countryName, translations.aliases);
     return translations.countries[normalized] || countryName;
+}
+
+export function getCityTranslation(
+    cityName: string,
+    translations: TranslationData
+): string {
+    // On normalise d'abord (trim) mais sans alias pour les villes
+    const normalized = cityName.trim();
+    return translations.cities[normalized] || cityName;
 }
 
 function normalizeCountry(name: string, aliases: Record<string, string>): string {
