@@ -1,5 +1,5 @@
 import type { MedalStats } from './types.js';
-import { translateCountry } from './translations.js';
+import { translateCountry, translateCity } from './translations.js';
 import { equal } from './calculator.js';
 
 export function renderRankingTable(
@@ -92,7 +92,7 @@ export function renderEditionTable(
         const tr = document.createElement("tr");
         tr.innerHTML = `
             <td>${year}</td>
-            <td>${city}</td>
+            <td>${translateCity(city)}</td>
             <td>${translateCountry(gold)}</td>
             <td>${translateCountry(silver)}</td>
             <td>${translateCountry(bronze)}</td>
