@@ -62,44 +62,47 @@ header {
 	color: black;
 	background-color: yellow;
 }
+
 /** Fin liste déroulante **/
+
+/** 2 Images sur la même ligne à partir de 1200px en taille **/
+@media (min-width: 1200px) {
+	.imgTerrain {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 10px;
+		text-align: center;
+		width: 100%;
+	}
+}
 
 /** image au centre de la fenêtre **/
 img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 30%;
-	height: 50%;
-	padding: 20px;
-	transition: 4s;
+	margin-top: 20px;
+	width: 40%;
+	transition: 2s;
 }
 
-/** Image en horizontale plus grand que l'horizontal **/
-br+img {
-	text-align: center;
-	width: 700px;
-	height: 400px;
-}
-
-/** Agrandissement des images horizontales sur une durée de 5 secondes **/
-br+img:hover {
-	position: relative;
-	float: center;
-	width: 95%;
-	height: 600px;
-	transition: 5s;
+.imgTerrain img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	width: 60%;
+	transition: 2s;
 }
 
 /** Agrandissement des images verticales sur une durée de 3 secondes **/
 img:hover {
 	position: relative;
-	float: center;
-	width: 60%;
+	width: 80%;
 	transition: 3s;
 }
 
-/** Taille de la police **/
+/** Taille, style et couleur arrière-plan de la police **/
 section {
 	font-size: 20pt;
 }
