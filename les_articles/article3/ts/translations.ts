@@ -1,5 +1,5 @@
 import type { TranslationData } from './translation-loader.js'
-import { loadTranslations, getCountryTranslation } from './translation-loader.js';
+import { loadTranslations, getCountryTranslation, getCityTranslation } from './translation-loader.js';
 
 let translations: TranslationData | null = null;
 
@@ -13,6 +13,14 @@ export function translateCountry(countryName: string): string {
         return countryName;
     }
     return getCountryTranslation(countryName, translations);
+}
+
+export function translateCity(cityName: string): string {
+    if (!translations) {
+        console.warn('Translations not initialized yet');
+        return cityName;
+    }
+    return getCityTranslation(cityName, translations);
 }
 
 export function normalizeCountry(name: string): string {
