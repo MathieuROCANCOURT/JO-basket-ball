@@ -1,11 +1,11 @@
-import type { MedalStats } from './types.js';
-import { translateCountry, translateCity } from './translations.js';
+import type { MedalStats, UITranslations } from './types.js';
+import { translateCountry, translateCity, getUITranslation } from './translations.js';
 import { equal } from './calculator.js';
 
 export function renderRankingTable(
     countries: MedalStats[],
     container: HTMLElement,
-    genderLabel: string
+    gender: "men" | "women"
 ): void {
     const maxGold = Math.max(...countries.map(c => c.Gold));
     const maxSilver = Math.max(...countries.map(c => c.Silver));
@@ -16,15 +16,15 @@ export function renderRankingTable(
 
     const table = document.createElement('table');
     table.innerHTML = `
-        <caption>Palmarès ${genderLabel}</caption>
+        <caption>${getUITranslation('palmares')} ${getUITranslation(gender)}</caption>
         <thead>
             <tr>
-                <th>Pos.</th>
-                <th>Pays</th>
-                <th>Or</th>
-                <th>Argent</th>
-                <th>Bronze</th>
-                <th>Total</th>
+                <th>${getUITranslation('pos')}</th>
+                <th>${getUITranslation('country')}</th>
+                <th>${getUITranslation('gold')}</th>
+                <th>${getUITranslation('silver')}</th>
+                <th>${getUITranslation('bronze')}</th>
+                <th>${getUITranslation('total')}</th>
             </tr>
         </thead>
     `;
@@ -68,18 +68,18 @@ export function renderRankingTable(
 export function renderEditionTable(
     rows: string[][],
     container: HTMLElement,
-    genderLabel: string
+    gender: "men" | "women"
 ): void {
     const table = document.createElement("table");
     table.innerHTML = `
-        <caption>Tableau des médailles ${genderLabel}</caption>
+        <caption>${getUITranslation('tableau_medailles')} ${getUITranslation(gender)}</caption>
         <thead>
             <tr>
-                <th>Année</th>
-                <th>Ville</th>
-                <th>Médaille d'or</th>
-                <th>Médaille d'argent</th>
-                <th>Médaille de bronze</th>
+                <th>${getUITranslation('year')}</th>
+                <th>${getUITranslation('city')}</th>
+                <th>${getUITranslation('gold_medal')}</th>
+                <th>${getUITranslation('silver_medal')}</th>
+                <th>${getUITranslation('bronze_medal')}</th>
             </tr>
         </thead>
     `;
@@ -112,14 +112,15 @@ export function renderTotalTable(sortedCountries: MedalStats[], container: HTMLE
 
     const table = document.createElement("table");
     table.innerHTML = `
+        <caption>${getUITranslation('total_medals')}</caption>
         <thead>
             <tr>
-                <th>Rang</th>
-                <th>Nation</th>
-                <th>Or</th>
-                <th>Argent</th>
-                <th>Bronze</th>
-                <th>Total</th>
+                <th>${getUITranslation('rank')}</th>
+                <th>${getUITranslation('nation')}</th>
+                <th>${getUITranslation('gold')}</th>
+                <th>${getUITranslation('silver')}</th>
+                <th>${getUITranslation('bronze')}</th>
+                <th>${getUITranslation('total')}</th>
             </tr>
         </thead>
     `;
