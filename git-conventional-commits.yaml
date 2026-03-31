@@ -29,3 +29,11 @@ changelog:
     perf: Performance Improvements
     merge: Merges
     breakingChange: BREAKING CHANGES
+
+  ## GitHub
+  # commitUrl: https://github.com/ACCOUNT/REPOSITORY/commit/%commit%
+  # commitRangeUrl: https://github.com/ACCOUNT/REPOSITORY/compare/%from%...%to%?diff=split
+
+  ## GitHub Issues
+  # issueRegexPattern: "#[0-9]+"
+  # issueUrl: https://github.com/ACCOUNT/REPOSITORY/issues/%issue%
