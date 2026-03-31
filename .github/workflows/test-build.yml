@@ -1,0 +1,103 @@
+name: Build & Test Site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build TypeScript
+        run: npm run build
+
+      - name: Verify Output
+        run: |
+          echo "=========================================="
+          echo "🔍 CHECKING BUILD OUTPUT..."
+          echo "=========================================="
+
+          # Check if dist folder exists
+          if [ ! -d "dist" ]; then
+            echo "❌ ERROR: 'dist' folder is MISSING!"
+            echo "   The build script did not create the output directory."
+            exit 1
+          fi
+
+          echo "✅ 'dist' folder found."
+          echo ""
+
+          # Check translations directory
+          if [ ! -d "dist/translations" ]; then
+            echo "❌ ERROR: 'dist/translations' folder is MISSING!"
+            echo "   Did you forget 'cp -r translations dist/' in your build script?"
+            exit 1
+          fi
+
+          echo "✅ 'dist/translations' folder found."
+
+          # Fail if files are missing
+          FILES_TO_CHECK=(
+            "dist/translations/fr.json"
+            "dist/translations/en.json"
+            "dist/calculator.js"
+            "dist/medals.js"
+            "dist/parser.js"
+            "dist/renderer.js"
+            "dist/translation-loader.js"
+            "dist/translations.js"
+            "dist/types.js"
+          )
+
+          FAILED=0
+          for file in "${FILES_TO_CHECK[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "🚨 CRITICAL ERROR: File '$file' is MISSING!"
+              echo "   The application will crash if this file is missing."
+              echo "   Please check your 'package.json' build script."
+              FAILED=1
+            else
+              echo "✅ Found: $file"
+            fi
+          done
+
+          echo ""
+          echo "=========================================="
+          if [ $FAILED -eq 1 ]; then
+            echo "❌ BUILD VERIFICATION FAILED"
+            echo "   Missing files detected. Please fix and retry."
+            echo "=========================================="
+            exit 1
+          else
+            echo "✅ ALL REQUIRED FILES PRESENT"
+            echo "=========================================="
+          fi
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-build
+          path: dist/
+          retention-days: 7
+
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

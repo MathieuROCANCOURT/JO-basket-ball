@@ -4,8 +4,8 @@
         "module": "ESNext",
         "moduleResolution": "bundler",
         "strict": true,
-        "outDir": "./les_articles/article3/dist",
-        "rootDir": "./les_articles/article3/ts",
+        "outDir": "./dist",
+        "rootDir": "./src",
         "declaration": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
@@ -15,6 +15,5 @@
         "verbatimModuleSyntax": true,
         "lib": ["ES2020", "DOM", "DOM.Iterable"]
     },
-    "include": ["les_articles/article3/ts/**/*"],
-    "exclude": ["node_modules", "les_articles/article3/dist"]
+    "include": ["src/**/*"]
 }

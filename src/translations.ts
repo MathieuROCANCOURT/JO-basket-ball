@@ -1,9 +1,10 @@
 import type { TranslationData } from './translation-loader.js'
+import type { UITranslations } from './types.js'
 import { loadTranslations, getCountryTranslation, getCityTranslation } from './translation-loader.js';
 
 let translations: TranslationData | null = null;
 
-export async function initializeTranslations(lang: string = 'fr'): Promise<void> {
+export async function initializeTranslations(lang: string): Promise<void> {
     translations = await loadTranslations(lang);
 }
 
@@ -29,4 +30,16 @@ export function normalizeCountry(name: string): string {
     }
     const t = name.trim();
     return translations.aliases[t] || t;
+}
+
+export function getUITranslation(key: keyof UITranslations): string {
+    if (!translations?.ui) {
+        console.warn('UI Translations not initialized yet');
+        return key;
+    }
+    return translations.ui[key] || key;
+}
+
+export function getGenderLabel(gender: "men" | "women"): "men" | "women" {
+    return gender === 'men' ? 'men' : 'women';
 }

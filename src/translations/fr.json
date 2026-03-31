@@ -57,5 +57,25 @@
         "USSR": "Russia",
         "Yugoslavia": "Serbia",
         "Serbia and Montenegro": "Serbia"
+    },
+    "ui": {
+        "men": "Hommes",
+        "women": "Femmes",
+        "palmares": "Palmarès",
+        "tableau_medailles": "Tableau des médailles",
+        "total_medals": "Nombre de médailles au total",
+        "pos": "Pos.",
+        "country": "Pays",
+        "gold": "Or",
+        "silver": "Argent",
+        "bronze": "Bronze",
+        "total": "Total",
+        "year": "Année",
+        "city": "Ville",
+        "gold_medal": "Médaille d'or",
+        "silver_medal": "Médaille d'argent",
+        "bronze_medal": "Médaille de bronze",
+        "rank": "Rang",
+        "nation": "Nation"
     }
 }
