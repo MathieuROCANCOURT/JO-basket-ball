@@ -52,7 +52,7 @@ jobs:
           echo "✅ 'dist/translations' folder found."
 
           # Fail if files are missing
-          FILES_TO_CHECK = (
+          FILES_TO_CHECK=(
             "dist/translations/fr.json"
             "dist/translations/en.json"
             "dist/calculator.js"
