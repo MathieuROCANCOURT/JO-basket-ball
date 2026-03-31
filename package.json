@@ -4,6 +4,10 @@
     "type": "module",
     "scripts": {
         "build": "tsc && cp -r src/translations dist/",
-        "dev": "tsc --watch"
+        "dev": "tsc --watch",
+        "all": "html-validator --quiet"
+    },
+    "devDependencies": {
+        "w3c-html-validator": "^2.2.0"
     }
 }
