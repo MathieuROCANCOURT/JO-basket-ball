@@ -5,6 +5,7 @@
     "scripts": {
         "build": "tsc && cp -r src/translations dist/",
         "dev": "tsc --watch",
+        "serve": "npx serve .",
         "validate": "html-validate 'articles/**/*.html' 'homepage-*.html'"
     },
     "devDependencies": {
