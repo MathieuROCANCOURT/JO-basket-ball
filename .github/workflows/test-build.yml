@@ -95,9 +95,18 @@ jobs:
           path: dist/
           retention-days: 7
 
+      - name: Prepare deployment
+        run: |
+          # Create a staging folder with all files
+          mkdir -p staging
+          cp -r . staging/
+          # Ensure dist is included even if ignored
+          cp -r dist staging/dist/
+          
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./staging
+          force_orphan: true
