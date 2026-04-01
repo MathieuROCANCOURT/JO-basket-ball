@@ -1,10 +1,22 @@
 name: Build & Test Site
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -17,7 +29,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: "24"
+          node-version: "22"
           cache: "npm"
 
       - name: Install dependencies
@@ -89,24 +101,12 @@ jobs:
           fi
 
       - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: site-build
-          path: dist/
-          retention-days: 7
+          path: ./
 
-      - name: Prepare deployment
-        run: |
-          # Create a staging folder with all files
-          mkdir -p staging
-          cp -r . staging/
-          # Ensure dist is included even if ignored
-          cp -r dist staging/dist/
-          
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./staging
-          force_orphan: true
