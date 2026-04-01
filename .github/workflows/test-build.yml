@@ -2,7 +2,7 @@ name: Build & Test Site
 
 on:
   push:
-    branches: [main]
+    branches: [8-render-ranking-medals]
   pull_request:
     branches: [main]
 
@@ -25,13 +25,6 @@ jobs:
 
       - name: Build TypeScript
         run: npm run build
-
-      - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: site-build
-          path: dist/
-          retention-days: 7
 
       - name: Verify Output
         run: |
@@ -94,6 +87,13 @@ jobs:
             echo "✅ ALL REQUIRED FILES PRESENT"
             echo "=========================================="
           fi
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-build
+          path: dist/
+          retention-days: 7
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'
