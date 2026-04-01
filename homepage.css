@@ -120,34 +120,38 @@ ul a {
 	/* Couleur et style de police */
 	color: black;
 	font-family: "Ma police", Arial, sans-serif;
+	text-decoration: none
 }
 
 /** Les couleurs des blocs **/
 /* Par défaut */
 nav ul a:link {
 	background-color: white;
+	text-decoration: none
 }
 
 /* Déjà visité */
 nav ul a:visited {
 	background-color: red;
+	text-decoration: none
 }
 
 /* Lors du survol */
 nav ul a:hover {
 	background-color: green;
-	text-decoration: underline;
+	text-decoration: none
 }
 
 /* Focus clavier */
 nav ul a:focus {
 	background-color: green;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 /* Lors du clic */
 nav ul a:active {
 	color: yellow;
+	text-decoration: none
 }
 
 /* Image de la FIBA */
