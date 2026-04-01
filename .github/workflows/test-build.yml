@@ -1,22 +1,10 @@
 name: Build & Test Site
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
 
 jobs:
   build:
@@ -100,26 +88,16 @@ jobs:
             echo "=========================================="
           fi
 
-      - name: Force add dist folder
-        run: |
-          # Remove dist from gitignore temporarily for this session
-          sed -i '/^dist\/$/d' .gitignore
-          # Force add the dist folder
-          git add -f dist/
-          # Verify it's staged
-          git status
-
-      - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
         with:
-          path: ./
+          name: site-build
+          path: dist/
+          retention-days: 7
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          force_orphan: true
-          # Ensure we push to gh-pages branch
-          keep_files: false
+          publish_dir: ./dist
