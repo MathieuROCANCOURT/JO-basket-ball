@@ -93,12 +93,8 @@ jobs:
 
       - name: Force add dist folder
         run: |
-          # Remove dist from gitignore temporarily for this session
           sed -i '/^dist\/$/d' .gitignore
-          # Force add the dist folder
           git add -f dist/
-          # Verify it's staged
-          git status
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'
@@ -107,5 +103,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
           force_orphan: true
-          # Ensure we push to gh-pages branch
-          keep_files: false
