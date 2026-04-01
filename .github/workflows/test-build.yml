@@ -26,6 +26,13 @@ jobs:
       - name: Build TypeScript
         run: npm run build
 
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-build
+          path: dist/
+          retention-days: 7
+
       - name: Verify Output
         run: |
           echo "=========================================="
@@ -87,13 +94,6 @@ jobs:
             echo "✅ ALL REQUIRED FILES PRESENT"
             echo "=========================================="
           fi
-
-      - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: site-build
-          path: dist/
-          retention-days: 7
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'
