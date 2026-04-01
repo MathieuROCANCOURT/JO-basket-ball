@@ -29,7 +29,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: "22"
+          node-version: "24"
           cache: "npm"
 
       - name: Install dependencies
@@ -100,13 +100,21 @@ jobs:
             echo "=========================================="
           fi
 
-      - name: Upload Build Artifacts
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./
+      - name: Force add dist folder
+        run: |
+          # Remove dist from gitignore temporarily for this session
+          sed -i '/^dist\/$/d' .gitignore
+          # Force add the dist folder
+          git add -f dist/
+          # Verify it's staged
+          git status
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          force_orphan: true
+          # Ensure we push to gh-pages branch
+          keep_files: false
