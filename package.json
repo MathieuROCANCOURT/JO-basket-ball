@@ -6,7 +6,7 @@
         "build": "tsc && cp -r src/translations dist/",
         "dev": "tsc --watch",
         "serve": "npx serve .",
-        "validate": "html-validate 'articles/**/*.html' 'homepage-*.html'"
+        "validate": "html-validate 'articles/**/*.html' '*.html'"
     },
     "devDependencies": {
         "html-validate": "^10.11.2"
