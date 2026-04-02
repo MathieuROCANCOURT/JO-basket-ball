@@ -1,0 +1,5 @@
+repos:
+- repo: https://github.com/MathieuROCANCOURT/JO-basket-ball
+  rev: <RELEASE_TAG>
+  hooks:
+    - id: conventional-commits

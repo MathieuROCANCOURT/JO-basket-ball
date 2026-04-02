@@ -7,6 +7,7 @@ convention:
   - perf     # Commits are special `refactor` commits, that improve performance
   - style    # Commits, that do not affect the meaning (white-space, formatting, missing semi-colons, etc)
   - test     # Commits, that add missing tests or correcting existing tests
+  - ci
   - build    # Commits, that affect build components like build tool, ci pipeline, dependencies, project version, ...
   - ops      # Commits, that affect operational components like infrastructure, deployment, backup, recovery, ...
   - docs     # Commits, that affect documentation only 
@@ -31,9 +32,9 @@ changelog:
     breakingChange: BREAKING CHANGES
 
   ## GitHub
-  # commitUrl: https://github.com/ACCOUNT/REPOSITORY/commit/%commit%
-  # commitRangeUrl: https://github.com/ACCOUNT/REPOSITORY/compare/%from%...%to%?diff=split
+  commitUrl: https://github.com/ACCOUNT/REPOSITORY/commit/%commit%
+  commitRangeUrl: https://github.com/ACCOUNT/REPOSITORY/compare/%from%...%to%?diff=split
 
   ## GitHub Issues
-  # issueRegexPattern: "#[0-9]+"
-  # issueUrl: https://github.com/ACCOUNT/REPOSITORY/issues/%issue%
+  issueRegexPattern: "#[0-9]+"
+  issueUrl: https://github.com/ACCOUNT/REPOSITORY/issues/%issue%

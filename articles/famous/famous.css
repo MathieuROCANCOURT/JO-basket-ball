@@ -1,5 +1,5 @@
 /** Grille de 2 colonnes et définit la taille de police **/
-section {
+div {
 	display: grid;
 	grid-template-columns: auto auto;
 	font-size: 16pt;
