@@ -18,6 +18,38 @@ html {
 	padding: 16pt
 }
 
+/** Bouton changement de langue **/
+
+.lang-toggle-btn {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.lang-toggle-btn:hover {
+    background-color: green;
+}
+
+.lang-toggle-btn:focus {
+    background-color: green;
+}
+
+.lang-toggle-btn:active {
+    color: yellow;
+}
+
+.language-switcher {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 100;
+}
+
+
 /** Titre des grandes cases au milieu et taille de la police **/
 legend {
     width: auto;
