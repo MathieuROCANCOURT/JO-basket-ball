@@ -1,33 +1,31 @@
 {
-    "countries": {
-    },
-    "cities": {
-    },
-    "aliases": {
-        "Soviet Union": "Russia",
-        "Unified": "Russia",
-        "USSR": "Russia",
-        "Yugoslavia": "Serbia",
-        "Serbia and Montenegro": "Serbia"
-    },
-    "ui": {
-        "men": "Men",
-        "women": "Women",
-        "palmares": "Ranking",
-        "tableau_medailles": "Medal Table",
-        "total_medals": "Total Medals",
-        "pos": "Pos.",
-        "country": "Country",
-        "gold": "Gold",
-        "silver": "Silver",
-        "bronze": "Bronze",
-        "total": "Total",
-        "year": "Year",
-        "city": "City",
-        "gold_medal": "Gold Medal",
-        "silver_medal": "Silver Medal",
-        "bronze_medal": "Bronze Medal",
-        "rank": "Rank",
-        "nation": "Nation"
-    }
+	"countries": {},
+	"cities": {},
+	"aliases": {
+		"Soviet Union": "Russia",
+		"Unified": "Russia",
+		"USSR": "Russia",
+		"Yugoslavia": "Serbia",
+		"Serbia and Montenegro": "Serbia"
+	},
+	"ui": {
+		"men": "Men",
+		"women": "Women",
+		"palmares": "Ranking",
+		"tableau_medailles": "Medal Table",
+		"total_medals": "Total Medals",
+		"pos": "Pos.",
+		"country": "Country",
+		"gold": "Gold",
+		"silver": "Silver",
+		"bronze": "Bronze",
+		"total": "Total",
+		"year": "Year",
+		"city": "City",
+		"gold_medal": "Gold Medal",
+		"silver_medal": "Silver Medal",
+		"bronze_medal": "Bronze Medal",
+		"rank": "Rank",
+		"nation": "Nation"
+	}
 }

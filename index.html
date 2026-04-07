@@ -1,59 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JO Basket - Boujour</title>
+		<link rel="stylesheet" type="text/css" href="index.css" />
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JO Basket - Boujour</title>
-    <link rel="stylesheet" type="text/css" href="index.css">
-</head>
+	<body>
+		<h1>Bienvenue sur le site des JO Basket</h1>
+		<div class="spinner"></div>
+		<p>Détection de votre langue préférée...</p>
+		<p id="fallback-message" style="display: none">
+			Si rien ne se passe dans quelques secondes,
+			<a href="./homepage-fr.html" id="manual-link">cliquez ici</a>.
+		</p>
 
-<body>
-    <h1>Bienvenue sur le site des JO Basket</h1>
-    <div class="spinner"></div>
-    <p>Détection de votre langue préférée...</p>
-    <p id="fallback-message" style="display: none;">
-        Si rien ne se passe dans quelques secondes, <a href="./homepage-fr.html" id="manual-link">cliquez ici</a>.
-    </p>
+		<script>
+			(function () {
+				// Configuration
+				const SUPPORTED_LANGUAGES = ["en", "fr"];
+				const DEFAULT_LANGUAGE = "fr";
+				const REDIRECT_DELAY = 1500; // 1,5 seconds delay
 
-    <script>
-        (function () {
-            // Configuration
-            const SUPPORTED_LANGUAGES = ['en', 'fr'];
-            const DEFAULT_LANGUAGE = 'fr';
-            const REDIRECT_DELAY = 1500; // 1,5 seconds delay
+				// Get browser's preferred languages
+				const browserLanguages = navigator.languages || [navigator.language || DEFAULT_LANGUAGE];
 
-            // Get browser's preferred languages
-            const browserLanguages = navigator.languages || [navigator.language || DEFAULT_LANGUAGE];
+				// Find best matching language
+				let preferredLang = DEFAULT_LANGUAGE;
+				for (const browserLang of browserLanguages) {
+					const shortLang = browserLang.split("-")[0].toLowerCase();
+					if (SUPPORTED_LANGUAGES.includes(shortLang)) {
+						preferredLang = shortLang;
+						break;
+					}
+				}
 
-            // Find best matching language
-            let preferredLang = DEFAULT_LANGUAGE;
-            for (const browserLang of browserLanguages) {
-                const shortLang = browserLang.split('-')[0].toLowerCase();
-                if (SUPPORTED_LANGUAGES.includes(shortLang)) {
-                    preferredLang = shortLang;
-                    break;
-                }
-            }
+				// Determine target URL
+				const targetUrl = `./homepage-${preferredLang}.html`;
 
-            // Determine target URL
-            const targetUrl = `./homepage-${preferredLang}.html`;
+				// Show fallback message after delay
+				setTimeout(() => {
+					document.getElementById("fallback-message").style.display = "block";
+					document.getElementById("manual-link").href = targetUrl;
+				}, 3000);
 
-            // Show fallback message after delay
-            setTimeout(() => {
-                document.getElementById('fallback-message').style.display = 'block';
-                document.getElementById('manual-link').href = targetUrl;
-            }, 3000);
+				// Perform redirect
+				setTimeout(() => {
+					window.location.replace(targetUrl);
+				}, REDIRECT_DELAY);
 
-            // Perform redirect
-            setTimeout(() => {
-                window.location.replace(targetUrl);
-            }, REDIRECT_DELAY);
-
-            // Log for debugging
-            console.log(`LanguageSwitcher: Detected ${browserLanguages[0]}, redirecting to ${preferredLang}`);
-        })();
-    </script>
-</body>
-
+				// Log for debugging
+				console.log(`LanguageSwitcher: Detected ${browserLanguages[0]}, redirecting to ${preferredLang}`);
+			})();
+		</script>
+	</body>
 </html>

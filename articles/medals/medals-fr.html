@@ -1,52 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr-FR">
+	<head>
+		<link rel="stylesheet" type="text/css" href="../base.css" />
+		<link rel="stylesheet" type="text/css" href="medals.css" />
+		<meta charset="UTF-8" />
+		<meta name="author" content="Mathieu Rocancourt" />
+		<title>Les médailles au Jeux Olympique</title>
+	</head>
 
-<head>
-	<link rel="stylesheet" type="text/css" href="../base.css">
-	<link rel="stylesheet" type="text/css" href="medals.css">
-	<meta charset="UTF-8">
-	<meta name="author" content="Mathieu Rocancourt">
-	<title>Les médailles au Jeux Olympique</title>
-</head>
+	<body>
+		<header>
+			<!--lien vers la page d'accueil-->
+			<a href="../../homepage-fr.html"> Retour au menu</a>
+			<!--titre de l'article-->
+			<h1>Les médailles</h1>
+		</header>
 
-<body>
-	<header>
-		<!--lien vers la page d'accueil-->
-		<a href="../../homepage-fr.html"> Retour au menu</a>
-		<!--titre de l'article-->
-		<h1> Les médailles </h1>
-	</header>
+		<script type="module" src="./../../dist/lang-switcher.js"></script>
 
-	<script type="module" src="./../../dist/lang-switcher.js"></script>
+		<main>
+			<div id="tableContainer">
+				<fieldset class="masculin">
+					<legend>Masculin</legend>
+				</fieldset>
+				<fieldset class="feminin">
+					<legend>Féminin</legend>
+				</fieldset>
+			</div>
+			<div id="totalMedalsContainer">
+				<fieldset>
+					<legend>Nombre de médailles au total</legend>
+				</fieldset>
+			</div>
 
-	<main>
-		<div id="tableContainer">
-			<fieldset class="masculin">
-				<legend> Masculin </legend>
-			</fieldset>
-			<fieldset class="feminin">
-				<legend> Féminin </legend>
-			</fieldset>
-		</div>
-		<div id="totalMedalsContainer">
-			<fieldset>
-				<legend> Nombre de médailles au total </legend>
-			</fieldset>
-		</div>
-
-		<script type="module" src="./../../dist/medals.js"></script>
-	</main>
-	<footer>
-		Source des informations: <a href="https://fr.wikipedia.org/wiki/Basket-ball_aux_Jeux_olympiques">Wikipedia</a>,
-		<a href="https://www.basketball-reference.com/international/mens-olympics-history.html" target="_blank"
-			rel="noopener noreferrer">
-			Basketball-Reference.com - Men's Olympics History
-		</a> (© Sports Reference LLC),
-		<a href="https://www.basketball-reference.com/international/womens-olympics-history.html" target="_blank"
-			rel="noopener noreferrer">
-			Basketball-Reference.com - Women's Olympics History
-		</a> (© Sports Reference LLC).
-	</footer>
-</body>
-
+			<script type="module" src="./../../dist/medals.js"></script>
+		</main>
+		<footer>
+			Source des informations:
+			<a href="https://fr.wikipedia.org/wiki/Basket-ball_aux_Jeux_olympiques">Wikipedia</a>,
+			<a
+				href="https://www.basketball-reference.com/international/mens-olympics-history.html"
+				target="_blank"
+				rel="noopener noreferrer">
+				Basketball-Reference.com - Men's Olympics History
+			</a>
+			(© Sports Reference LLC),
+			<a
+				href="https://www.basketball-reference.com/international/womens-olympics-history.html"
+				target="_blank"
+				rel="noopener noreferrer">
+				Basketball-Reference.com - Women's Olympics History
+			</a>
+			(© Sports Reference LLC).
+		</footer>
+	</body>
 </html>

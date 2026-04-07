@@ -1,109 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr-FR">
+	<head>
+		<link rel="stylesheet" type="text/css" href="../base.css" />
+		<link rel="stylesheet" type="text/css" href="rules.css" />
+		<meta charset="UTF-8" />
+		<meta name="author" content="Mathieu Rocancourt" />
+		<title>Les règles de base du basket-ball</title>
+	</head>
 
-<head>
-	<link rel="stylesheet" type="text/css" href="../base.css">
-	<link rel="stylesheet" type="text/css" href="rules.css">
-	<meta charset="UTF-8">
-	<meta name="author" content="Mathieu Rocancourt">
-	<title>Les règles de base du basket-ball</title>
-</head>
+	<body>
+		<header>
+			<!--lien vers la page d'accueil-->
+			<a href="../../homepage-fr.html"> Retour au menu</a>
+			<!--titre de l'article-->
+			<h1>Les règles de base du basket-ball</h1>
+		</header>
 
-<body>
-	<header>
-		<!--lien vers la page d'accueil-->
-		<a href="../../homepage-fr.html"> Retour au menu</a>
-		<!--titre de l'article-->
-		<h1> Les règles de base du basket-ball </h1>
-	</header>
+		<script type="module" src="./../../dist/lang-switcher.js"></script>
 
-	<script type="module" src="./../../dist/lang-switcher.js"></script>
-
-	<main>
-		<!--menu déroulante-->
-		<nav class="menu">
-			<div class="categorie">
-				<h2>5x5 ou 3x3</h2>
-				<ul>
-					<li><a href="5-vs-5-fr.html">5 contre 5</a></li>
-					<li><a href="3-vs-3-fr.html">3 contre 3</a></li>
-				</ul>
-			</div>
-		</nav>
-		<!--encadrement de la section-->
-		<fieldset class="a">
-			<legend> 5 contre 5 </legend>
-			<div>
-				<p>Les règles de base pour un match de basket en 5 contre 5 : ce sont 2 équipes qui ont chacune un
-					entraîneur et la possibilité d'avoir un entraîneur adjoint.
-					Ils ont chacun 5 joueurs sur le terrain et les équipes ont droit à un maximum de 7 remplacements.
-					Pour qu'un match commence, il y a besoin d'1 arbitre minimum et 3 arbitres maximum : 1<sup>er</sup>
-					arbitre,
-					2<sup>ème</sup> arbitre et 3<sup>ème</sup> arbitre et également, 2 personnes à la table minimum qui
-					sont le marqueur et le
-					chronométreur et au maximum 8 personnes. En plus, il y a le chronométreur des tirs,
-					l'aide-marqueur, le commisaire et 3 statisticiens.
-					Et il faut principalement un ballon. Un ballon taille 7 pour les hommes et un ballon taille 6 pour
-					les femmes.
-				</p>
-				<p>
-					Le terrain est limité avec des lignes rouges qui forment un rectangle qui mesure
-					13 à 15 mètres de large et 22 à 28 mètres de longueur dans la généralité.</p>
-				<div class="imgTerrain">
-					<figure>
-						<figcaption>
-							Les dimensions du terrain de basket-ball.
-						</figcaption>
-						<img src="./../../assets/rules/land_area_details.png" alt="Schéma terrain de basket"
-							data-source="FFBB"
-							data-source-url="https://api.ffbb.com/assets/313f308a-7b3b-4116-b969-882eb9c1d3ea#page=7">
-					</figure>
-					<figure>
-						<figcaption>
-							La table de marque et les sièges des remplaçants.
-						</figcaption>
-						<img src="./../../assets/rules/scorer_table.png" alt="Schéma table de marque" data-source="FFBB"
-							data-source-url="https://api.ffbb.com/assets/313f308a-7b3b-4116-b969-882eb9c1d3ea#page=10">
-					</figure>
+		<main>
+			<!--menu déroulante-->
+			<nav class="menu">
+				<div class="categorie">
+					<h2>5x5 ou 3x3</h2>
+					<ul>
+						<li><a href="5-vs-5-fr.html">5 contre 5</a></li>
+						<li><a href="3-vs-3-fr.html">3 contre 3</a></li>
+					</ul>
 				</div>
-				<p>
-					Il y a 2 paniers qui mesurent 3,05m de hauteur. Un panier vaut 1, 2 ou 3 points. 1 point
-					pour un panier marqué au lancer franc, soit le demi-cercle au-dessus de la zone restrictive qui est
-					à 4,20m du panier, les 3 points derrière la ligne pleine à 6,75m du panier et le reste à
-					2 points (voir les images).
-				</p>
-				<figure>
-					<figcaption>
-						Les zones à 2 et à 3 points.
-					</figcaption>
-					<img src="./../../assets/rules/2-3_points_fiels.png" alt="Schéma 2 points et à 3 points."
-						data-source="FFBB"
-						data-source-url="https://api.ffbb.com/assets/313f308a-7b3b-4116-b969-882eb9c1d3ea#page=10">
-				</figure>
-				<p>
-					Un match dure 4 périodes de 10' et 5' en prolongation en cas d'égalité jusqu'à les départager.
-					Les règles de la FIBA sont appliquées partout sauf aux États-Unis.
-					Par exemple, en NBA, c'est 4 périodes de 12'.
-				</p>
-				<p>Voir cette vidéo pour les règles de base en FIBA :</p>
-				<!--la vidéo-->
-				<p> <iframe width="560" height="315" src="https://www.youtube.com/embed/v9FF1qI5pFo?si=eBPvDhtQBjWQPlLy"
-						title="YouTube movie on the rules of 5x5"
-						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-						allowfullscreen></iframe>
-				</p>
-				<!--les liens vers des documents-->
-				<br>Les règles officielles FIBA :
-				<a href="https://api.ffbb.com/assets/313f308a-7b3b-4116-b969-882eb9c1d3ea">
-					Règlement officiel de basketball 2024</a>
-				<br>Document interprétations FIBA :
-				<a href="https://api.ffbb.com/assets/96f046a5-b30f-49cb-8cb2-e21eaa327832">
-					Interprétations officielles de la FIBA de la saison 2024-2025</a>
-			</div>
-		</fieldset>
-		<footer>
-		</footer>
-	</main>
-</body>
-
+			</nav>
+			<!--encadrement de la section-->
+			<fieldset class="a">
+				<legend>5 contre 5</legend>
+				<div>
+					<p>
+						Les règles de base pour un match de basket en 5 contre 5 : ce sont 2 équipes qui ont chacune un
+						entraîneur et la possibilité d'avoir un entraîneur adjoint. Ils ont chacun 5 joueurs sur le
+						terrain et les équipes ont droit à un maximum de 7 remplacements. Pour qu'un match commence, il
+						y a besoin d'1 arbitre minimum et 3 arbitres maximum : 1<sup>er</sup> arbitre, 2<sup>ème</sup>
+						arbitre et 3<sup>ème</sup> arbitre et également, 2 personnes à la table minimum qui sont le
+						marqueur et le chronométreur et au maximum 8 personnes. En plus, il y a le chronométreur des
+						tirs, l'aide-marqueur, le commisaire et 3 statisticiens. Et il faut principalement un ballon. Un
+						ballon taille 7 pour les hommes et un ballon taille 6 pour les femmes.
+					</p>
+					<p>
+						Le terrain est limité avec des lignes rouges qui forment un rectangle qui mesure 13 à 15 mètres
+						de large et 22 à 28 mètres de longueur dans la généralité.
+					</p>
+					<div class="imgTerrain">
+						<figure>
+							<figcaption>Les dimensions du terrain de basket-ball.</figcaption>
+							<img
+								src="./../../assets/rules/land_area_details.png"
+								alt="Schéma terrain de basket"
+								data-source="FFBB"
+								data-source-url="https://api.ffbb.com/assets/313f308a-7b3b-4116-b969-882eb9c1d3ea#page=7" />
+						</figure>
+						<figure>
+							<figcaption>La table de marque et les sièges des remplaçants.</figcaption>
+							<img
+								src="./../../assets/rules/scorer_table.png"
+								alt="Schéma table de marque"
+								data-source="FFBB"
+								data-source-url="https://api.ffbb.com/assets/313f308a-7b3b-4116-b969-882eb9c1d3ea#page=10" />
+						</figure>
+					</div>
+					<p>
+						Il y a 2 paniers qui mesurent 3,05m de hauteur. Un panier vaut 1, 2 ou 3 points. 1 point pour un
+						panier marqué au lancer franc, soit le demi-cercle au-dessus de la zone restrictive qui est à
+						4,20m du panier, les 3 points derrière la ligne pleine à 6,75m du panier et le reste à 2 points
+						(voir les images).
+					</p>
+					<figure>
+						<figcaption>Les zones à 2 et à 3 points.</figcaption>
+						<img
+							src="./../../assets/rules/2-3_points_fiels.png"
+							alt="Schéma 2 points et à 3 points."
+							data-source="FFBB"
+							data-source-url="https://api.ffbb.com/assets/313f308a-7b3b-4116-b969-882eb9c1d3ea#page=10" />
+					</figure>
+					<p>
+						Un match dure 4 périodes de 10' et 5' en prolongation en cas d'égalité jusqu'à les départager.
+						Les règles de la FIBA sont appliquées partout sauf aux États-Unis. Par exemple, en NBA, c'est 4
+						périodes de 12'.
+					</p>
+					<p>Voir cette vidéo pour les règles de base en FIBA :</p>
+					<!--la vidéo-->
+					<p>
+						<iframe
+							width="560"
+							height="315"
+							src="https://www.youtube.com/embed/v9FF1qI5pFo?si=eBPvDhtQBjWQPlLy"
+							title="YouTube movie on the rules of 5x5"
+							allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen></iframe>
+					</p>
+					<!--les liens vers des documents-->
+					<br />Les règles officielles FIBA :
+					<a href="https://api.ffbb.com/assets/313f308a-7b3b-4116-b969-882eb9c1d3ea">
+						Règlement officiel de basketball 2024</a
+					>
+					<br />Document interprétations FIBA :
+					<a href="https://api.ffbb.com/assets/96f046a5-b30f-49cb-8cb2-e21eaa327832">
+						Interprétations officielles de la FIBA de la saison 2024-2025</a
+					>
+				</div>
+			</fieldset>
+			<footer></footer>
+		</main>
+	</body>
 </html>

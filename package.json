@@ -1,16 +1,19 @@
 {
-    "name": "jo-basket-ball",
-    "version": "2.0.0-alpha.0",
-    "type": "module",
-    "scripts": {
-        "build": "tsc && cp -r src/translations dist/",
-        "dev": "tsc --watch",
-        "serve": "npx serve .",
-        "release": "commit-and-tag-version",
-        "validate": "html-validate 'articles/**/*.html' '*.html'"
-    },
-    "devDependencies": {
-        "commit-and-tag-version": "^12.7.1",
-        "html-validate": "^10.11.2"
-    }
+	"name": "jo-basket-ball",
+	"version": "2.0.0-alpha.0",
+	"type": "module",
+	"scripts": {
+		"build": "tsc && cp -r src/translations dist/",
+		"dev": "tsc --watch",
+		"serve": "npx serve .",
+		"format": "prettier --write \"**/*.{html,css,ts,js,json,md}\"",
+		"format:check": "prettier --check \"**/*.{html,css,ts,js,json,md}\"",
+		"release": "commit-and-tag-version",
+		"validate": "html-validate 'articles/**/*.html' '*.html'"
+	},
+	"devDependencies": {
+		"commit-and-tag-version": "^12.7.1",
+		"html-validate": "^10.11.2",
+		"prettier": "^3.8.1"
+	}
 }
