@@ -15,7 +15,7 @@ Vous pouvez tester avec le [fichier HTML de l'article 2](https://github.com/Math
 
 Sur la page d'accueil, on a le ballon qui fait un mouvement vertical avec une animation d'un rebond. Les couleurs de l'arrière-plan correspond aux 5 couleurs des anneaux des Jeux Olympiques.
 
-<img width="980" height="1034" alt="Page d&#39;accueil - Une discipline Olympique le Basket-ball" src="https://github.com/user-attachments/assets/77fac035-7e6e-4666-aa64-5122af0271cf" />
+<img width="980" height="1034" alt="Page d&#39;accueil - Une discipline Olympique le Basket-ball" src="https://github.com/user-attachments/assets/77fac035-7e6e-4666-aa64-5122af0271cf">
 
 ## Tâches
 
