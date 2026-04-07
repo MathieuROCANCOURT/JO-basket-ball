@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.0-alpha.1](https://github.com/MathieuROCANCOURT/JO-basket-ball/compare/v2.0.0-alpha.0...v2.0.0-alpha.1) (2026-04-07)
+
+
+### Features
+
+* Automatically detect the browser's preferred language when the user visits the website. ([fc1ac1f](https://github.com/MathieuROCANCOURT/JO-basket-ball/commit/fc1ac1f42b11e7e264c30c61c131638972dcfda4))
+* **lang:** Add a language switch button. ([bf5ddf1](https://github.com/MathieuROCANCOURT/JO-basket-ball/commit/bf5ddf15937e3ea6cc58eec699ee06d3fc373a2b))
+
+
+### Bug Fixes
+
+* resolve HTML structure. ([4e7c2cc](https://github.com/MathieuROCANCOURT/JO-basket-ball/commit/4e7c2cc453d8c3604918c213bea3fe6d5438ee0e))
+* **ui:** Replace the section with a div tag in the CSS to create two columns. ([80b9be3](https://github.com/MathieuROCANCOURT/JO-basket-ball/commit/80b9be3b48bda597957f1e31025fe1ccd5510e76))
+
 ## 2.0.0-alpha.0 (2026-04-02)
 
 ### ⚠ BREAKING CHANGES
