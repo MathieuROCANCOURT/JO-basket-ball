@@ -6,8 +6,8 @@
 		"build": "tsc && cp -r src/translations dist/",
 		"dev": "tsc --watch",
 		"serve": "npx serve .",
-		"format": "prettier --write \"**/*.{html,css,ts,js,json,md}\"",
-		"format:check": "prettier --check \"**/*.{html,css,ts,js,json,md}\"",
+		"format": "prettier --write \"**/*.{css,ts,js,json,md}\"",
+		"format:check": "prettier --check \"**/*.{css,ts,js,json,md}\"",
 		"release": "commit-and-tag-version",
 		"validate": "html-validate 'articles/**/*.html' '*.html'"
 	},

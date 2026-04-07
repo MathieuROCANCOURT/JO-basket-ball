@@ -63,18 +63,18 @@ jobs:
 
                   echo "✅ 'dist/translations' folder found."
 
-          # Fail if files are missing
-          FILES_TO_CHECK=(
-            "dist/translations/fr.json"
-            "dist/translations/en.json"
-            "dist/calculator.js"
-            "dist/medals.js"
-            "dist/parser.js"
-            "dist/renderer.js"
-            "dist/translation-loader.js"
-            "dist/translations.js"
-            "dist/types.js"
-          )
+                  # Fail if files are missing
+                  FILES_TO_CHECK=(
+                    "dist/translations/fr.json"
+                    "dist/translations/en.json"
+                    "dist/calculator.js"
+                    "dist/medals.js"
+                    "dist/parser.js"
+                    "dist/renderer.js"
+                    "dist/translation-loader.js"
+                    "dist/translations.js"
+                    "dist/types.js"
+                  )
 
                   FAILED=0
                   for file in "${FILES_TO_CHECK[@]}"; do

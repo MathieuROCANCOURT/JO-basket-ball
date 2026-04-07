@@ -1,0 +1,17 @@
+name: HTML Validation
+
+on:
+  push:
+    paths: ['**/*.html']
+  pull_request:
+    paths: ['**/*.html']
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Download vnu.jar
+        run: wget https://github.com/validator/validator/releases/latest/download/vnu.jar
+      - name: Validate HTML
+        run: java -jar vnu.jar --errors-only "**/*.html"
