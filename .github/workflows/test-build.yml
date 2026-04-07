@@ -68,7 +68,7 @@ jobs:
                     "dist/translations/fr.json"
                     "dist/translations/en.json"
                     "dist/calculator.js"
-                    "dist/lang-switcher.ts"
+                    "dist/lang-switcher.js"
                     "dist/medals.js"
                     "dist/parser.js"
                     "dist/renderer.js"
