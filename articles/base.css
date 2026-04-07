@@ -15,20 +15,51 @@ html {
 	background-image: linear-gradient(45deg, blue, yellow, grey, green, red);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	padding: 16pt
+	padding: 16pt;
+}
+
+/** Bouton changement de langue **/
+
+.lang-toggle-btn {
+	background-color: blue;
+	color: white;
+	border: none;
+	padding: 8px 16px;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+
+.lang-toggle-btn:hover {
+	background-color: green;
+}
+
+.lang-toggle-btn:focus {
+	background-color: green;
+}
+
+.lang-toggle-btn:active {
+	color: yellow;
+}
+
+.language-switcher {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	z-index: 100;
 }
 
 /** Titre des grandes cases au milieu et taille de la police **/
 legend {
-    width: auto;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 26pt;
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 26pt;
 }
 
 /** Les éléments dans header ne sont pas indépendants **/
 header {
-	overflow: hidden
+	overflow: hidden;
 }
 
 /** Police: taille, centrer, formatage, couleur et soulignement **/

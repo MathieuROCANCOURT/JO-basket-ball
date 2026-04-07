@@ -7,41 +7,41 @@
 /** Définir l'animation ballon(.droite) **/
 @-webkit-keyframes slide {
 	from {
-		margin-left: 0
+		margin-left: 0;
 	}
 
 	to {
-		margin-left: 80%
+		margin-left: 80%;
 	}
 }
 
 @keyframes slide {
 	from {
-		margin-left: 0
+		margin-left: 0;
 	}
 
 	to {
-		margin-left: 80%
+		margin-left: 80%;
 	}
 }
 
 @-webkit-keyframes bounce {
 	from {
-		margin-bottom: 0
+		margin-bottom: 0;
 	}
 
 	to {
-		margin-bottom: 20%
+		margin-bottom: 20%;
 	}
 }
 
 @keyframes bounce {
 	from {
-		margin-top: 0
+		margin-top: 0;
 	}
 
 	to {
-		margin-top: 20%
+		margin-top: 20%;
 	}
 }
 
@@ -51,6 +51,36 @@ html {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	text-align: center;
+}
+
+/** Bouton changement de langue **/
+.lang-toggle-btn {
+	background-color: blue;
+	color: white;
+	border: none;
+	padding: 8px 16px;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+
+.lang-toggle-btn:hover {
+	background-color: green;
+}
+
+.lang-toggle-btn:focus {
+	background-color: green;
+}
+
+.lang-toggle-btn:active {
+	color: yellow;
+}
+
+.language-switcher {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	z-index: 100;
 }
 
 /** Dimension et position de l'image à gauche du drapeau olympique **/
@@ -120,26 +150,26 @@ ul a {
 	/* Couleur et style de police */
 	color: black;
 	font-family: "Ma police", Arial, sans-serif;
-	text-decoration: none
+	text-decoration: none;
 }
 
 /** Les couleurs des blocs **/
 /* Par défaut */
 nav ul a:link {
 	background-color: white;
-	text-decoration: none
+	text-decoration: none;
 }
 
 /* Déjà visité */
 nav ul a:visited {
 	background-color: red;
-	text-decoration: none
+	text-decoration: none;
 }
 
 /* Lors du survol */
 nav ul a:hover {
 	background-color: green;
-	text-decoration: none
+	text-decoration: none;
 }
 
 /* Focus clavier */
@@ -151,7 +181,7 @@ nav ul a:focus {
 /* Lors du clic */
 nav ul a:active {
 	color: yellow;
-	text-decoration: none
+	text-decoration: none;
 }
 
 /* Image de la FIBA */
@@ -163,7 +193,7 @@ footer address {
 	/* Définir Le block */
 	display: block;
 	border: 0.5px solid black;
-	background-color: #48C4FA;
+	background-color: #48c4fa;
 	/* Formatage du texte en footer */
 	color: black;
 	font-size: 10pt;
