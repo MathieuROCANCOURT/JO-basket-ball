@@ -36,7 +36,7 @@ header {
 .menu a {
 	display: block;
 	margin: 0;
-	padding: .5em 1.5em;
+	padding: 0.5em 1.5em;
 	font-size: inherit;
 	color: black;
 	background-color: lightblue;
@@ -48,7 +48,7 @@ header {
 /* Survol du block fixe:police en blanc et couleur du block en violet */
 .menu .categorie:hover h2 {
 	color: white;
-	background-color: #883EF3;
+	background-color: #883ef3;
 }
 
 /* Survol des blocks après avoir dérouler le menu:police en noir et couleur du block en jaune */
@@ -109,12 +109,12 @@ div {
 
 /*section 5x5*/
 .a {
-	background-color: #677CC2;
+	background-color: #677cc2;
 }
 
 /*section 3x3*/
 .b {
-	background-color: #65AD5A;
+	background-color: #65ad5a;
 }
 
 /*lien*/
