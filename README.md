@@ -37,7 +37,7 @@ La validation HTML s'exécute automatiquement dans le workflow CI à chaque comm
 npm run release
 
 ### Pousser vers le dépôt distant
-git push --follow-tags
+git push --follow-tags origin main && npm publish
 ```
 
 ⚠️ Le push n'est pas automatique — exécutez-le manuellement après le release.
