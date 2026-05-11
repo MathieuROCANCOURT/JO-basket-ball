@@ -1,6 +1,6 @@
 {
 	"name": "jo-basket-ball",
-	"version": "2.0.0-alpha.1",
+	"version": "2.1.0",
 	"type": "module",
 	"scripts": {
 		"build": "tsc && cp -r src/translations dist/",
