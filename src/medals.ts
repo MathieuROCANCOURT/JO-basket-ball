@@ -3,7 +3,7 @@ import { parseCsv } from "./parser.js";
 import { buildMedalDict, mergeDicts, medalComparator } from "./calculator.js";
 import { renderRankingTable, renderEditionTable, renderTotalTable } from "./renderer.js";
 
-import type { MedalStats, UITranslations } from "./types.js";
+import type { MedalStats } from "./types.js";
 
 function detectLanguage(): "fr" | "en" {
 	const path = window.location.pathname;
@@ -21,8 +21,8 @@ async function init(): Promise<void> {
 		await initializeTranslations(lang);
 
 		const [menCsv, womenCsv] = await Promise.all([
-			fetch("../../data/men_medals.csv").then((r) => r.text()),
-			fetch("../../data/woman_medals.csv").then((r) => r.text()),
+			fetch("../../data/men_medals.csv").then((r): Promise<string> => r.text()),
+			fetch("../../data/woman_medals.csv").then((r): Promise<string> => r.text()),
 		]);
 
 		const menRows: string[][] = parseCsv(menCsv);
@@ -62,7 +62,7 @@ async function init(): Promise<void> {
 }
 
 document.addEventListener("DOMContentLoaded", (): void => {
-	init().catch((error) => {
+	init().catch((error): void => {
 		console.error("Erreur critique lors de l'initialisation :", error);
 	});
 });

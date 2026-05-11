@@ -1,12 +1,12 @@
-import type { MedalStats, UITranslations } from "./types.js";
+import type { MedalStats } from "./types.js";
 import { translateCountry, translateCity, getUITranslation } from "./translations.js";
 import { equal } from "./calculator.js";
 
 export function renderRankingTable(countries: MedalStats[], container: HTMLElement, gender: "men" | "women"): void {
-	const maxGold = Math.max(...countries.map((c) => c.Gold));
-	const maxSilver = Math.max(...countries.map((c) => c.Silver));
-	const maxBronze = Math.max(...countries.map((c) => c.Bronze));
-	const maxTotal = Math.max(...countries.map((c) => c.Total));
+	const maxGold = Math.max(...countries.map((c): number => c.Gold));
+	const maxSilver = Math.max(...countries.map((c): number => c.Silver));
+	const maxBronze = Math.max(...countries.map((c): number => c.Bronze));
+	const maxTotal = Math.max(...countries.map((c): number => c.Total));
 
 	const maybeBold = (val: number, max: number): string => (val === max ? `<b>${val}</b>` : `${val}`);
 
@@ -95,10 +95,10 @@ export function renderEditionTable(rows: string[][], container: HTMLElement, gen
 }
 
 export function renderTotalTable(sortedCountries: MedalStats[], container: HTMLElement): void {
-	const maxGold = Math.max(...sortedCountries.map((c) => c.Gold));
-	const maxSilver = Math.max(...sortedCountries.map((c) => c.Silver));
-	const maxBronze = Math.max(...sortedCountries.map((c) => c.Bronze));
-	const maxTotal = Math.max(...sortedCountries.map((c) => c.Total));
+	const maxGold = Math.max(...sortedCountries.map((c): number => c.Gold));
+	const maxSilver = Math.max(...sortedCountries.map((c): number => c.Silver));
+	const maxBronze = Math.max(...sortedCountries.map((c): number => c.Bronze));
+	const maxTotal = Math.max(...sortedCountries.map((c): number => c.Total));
 
 	const maybeBold = (val: number, max: number): string => (val === max ? `<b>${val}</b>` : `${val}`);
 
@@ -122,7 +122,7 @@ export function renderTotalTable(sortedCountries: MedalStats[], container: HTMLE
 	let rank = 1;
 	for (let i = 0; i < sortedCountries.length; i++) {
 		const cur = sortedCountries[i];
-		let tieCount = 1;
+		let tieCount: number = 1;
 		while (i + tieCount < sortedCountries.length && equal(cur, sortedCountries[i + tieCount])) {
 			tieCount++;
 		}

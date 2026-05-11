@@ -20,7 +20,7 @@ class LanguageSwitcher {
 
 	public init(): void {
 		if (document.readyState === "loading") {
-			document.addEventListener("DOMContentLoaded", () => this.setup());
+			document.addEventListener("DOMContentLoaded", (): void => this.setup());
 		} else {
 			this.setup();
 		}

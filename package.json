@@ -12,8 +12,8 @@
 		"validate": "html-validate 'articles/**/*.html' '*.html'"
 	},
 	"devDependencies": {
-		"commit-and-tag-version": "^12.7.1",
-		"html-validate": "^10.11.2",
-		"prettier": "^3.8.1"
+		"commit-and-tag-version": "^12.7.3",
+		"html-validate": "^10.16.0",
+		"prettier": "^3.8.3"
 	}
 }
