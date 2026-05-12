@@ -1,0 +1,74 @@
+/** Taille et formatage de la police **/
+main {
+	font-size: 16pt;
+	font-family: Arial, sans-serif;
+}
+
+/** Si la longueur de la fenêtre est <= 75em alors, Grille: 2 colonnes égaux et 1 ligne **/
+@media (min-width: 75em) {
+	#tableContainer {
+		display: grid;
+		column-gap: 0.5em;
+		grid-template-columns: 50% 50%;
+		grid-template-rows: auto;
+	}
+}
+
+/** Grande case du section masculin: coins arondis et arrière-plan bleu **/
+.masculin {
+	border-radius: 2em 2em;
+	background-color: lightblue;
+}
+
+/** Grande case du secction féminin: coins arondis et arrière-plan rose clair **/
+.feminin {
+	border-radius: 2em 2em;
+	background-color: lightpink;
+}
+
+/** Titre des grandes cases au milieu et taille de la police **/
+legend {
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 20pt;
+}
+
+/** Les bordures du tableau seront collées **/
+table {
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+/** Des bordures noir où le texte est au mileu des cases et alargissement des cases du tableau **/
+td,
+th {
+	border: 1px solid black;
+	text-align: center;
+	padding-bottom: 1%;
+	padding-top: 1%;
+}
+
+/** Ligne pair pour les tableaux masculins:couleur bleu foncé **/
+.masculin tbody tr:nth-child(odd) {
+	background-color: #2d64c0;
+}
+
+/** Ligne pair pour les tableaux féminins:couleur rose foncé **/
+.feminin tbody tr:nth-child(odd) {
+	background-color: #a118a1;
+}
+
+/** Dernière grande case en-dessous des 2 autres.
+ coins arrondis d'arrière-plan de couleur vert clair **/
+fieldset {
+	border-radius: 2em 2em;
+	background-color: #23fe2e;
+}
+
+/** Ligne pair du dernier tableau: vert foncé **/
+fieldset tbody tr:nth-child(odd) {
+	background-color: #117e11;
+}
